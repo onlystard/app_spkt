@@ -16,3 +16,5 @@ export 'profile/profile_binding.dart';
 export 'notications/notications_binding.dart';
 export 'notications/notications_controller.dart';
 export 'notications/notications_view.dart';
+
+export 'login/page_login.dart';

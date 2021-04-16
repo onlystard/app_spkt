@@ -5,4 +5,5 @@ abstract class Routes {
   static const CALENDAR = '/calendar';
   static const PROFILE = '/profile';
   static const NOTICATION = '/notication';
+  static const LOGIN = '/login';
 }
