@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class BtnNotication extends StatefulWidget {
+class BtnViewProfile extends StatefulWidget {
   @override
-  _BtnNoticationState createState() => _BtnNoticationState();
+  _BtnViewProfileState createState() => _BtnViewProfileState();
 }
 
-class _BtnNoticationState extends State<BtnNotication> {
+class _BtnViewProfileState extends State<BtnViewProfile> {
   bool hide = false;
   final ButtonStyle flatButtonStyle = TextButton.styleFrom(
       backgroundColor: Colors.blueGrey,
@@ -29,12 +29,12 @@ class _BtnNoticationState extends State<BtnNotication> {
               },
               child: Row(
                 children: [
-                  Icon(Icons.phone_android),
+                  Icon(Icons.account_box),
                   SizedBox(
                     width: 20,
                   ),
-                  Expanded(child: Text("Thông tin ứng dụng")),
-                 // Icon(Icons.arrow_forward_ios)
+                  Expanded(child: Text("Thông tin cá nhân")),
+                  //Icon(Icons.arrow_forward_ios)
                 ],
               ),
             ),
@@ -49,11 +49,11 @@ class _BtnNoticationState extends State<BtnNotication> {
             physics: NeverScrollableScrollPhysics(),
             children: [
               ListTile(
-                title: Text('app spkt'),
+                title: Text('NGUYEN VAN TEO - MSSV: 024921812'),
                 onTap: () {},
               ),
               ListTile(
-                title: Text('version 1.0.1@2021'),
+                title: Text('thông tin về sinh viên, thông tin về sinh viên, thông tin về sinh viên, thông tin về sinh viên, '),
                 onTap: () {},
               ),
             ],

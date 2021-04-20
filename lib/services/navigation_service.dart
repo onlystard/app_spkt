@@ -13,10 +13,6 @@ class NavigationService {
       ),
       BottomNavigationBarItem(
         label: '',
-        icon: Icon(Icons.done),
-      ),
-      BottomNavigationBarItem(
-        label: '',
         icon: Icon(Icons.calendar_today),
       ),
       BottomNavigationBarItem(

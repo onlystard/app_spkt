@@ -1,7 +1,9 @@
 import 'package:app_spkt/core.dart';
 import 'package:app_spkt/pages/profile/profile_controller.dart';
+import 'package:app_spkt/shared/widgets/log_out_profile.dart';
 import 'package:app_spkt/shared/widgets/notication_profile.dart';
 import 'package:app_spkt/shared/widgets/setting_profile.dart';
+import 'package:app_spkt/shared/widgets/viewprofile_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,75 +11,72 @@ class ProfileView extends GetView<ProfileViewController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
-      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
-      alignment: Alignment.topCenter,
-      color: Color(0xFFF0F0F0),
-      height: MediaQuery.of(context).size.height,
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  GestureDetector(
-                    onTap: () {},
-                    child: Icon(
-                      Icons.arrow_back_ios,
-                      color: Colors.blueGrey,
+        body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {},
+                      child: Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.blueGrey,
+                      ),
                     ),
-                  ),
-                ],
-              ),
-              GestureDetector(
-                onTap: () {
-                  print('setting');
-                },
-                child: Icon(
-                  Icons.settings_outlined,
-                  color: Colors.blueGrey,
+                  ],
                 ),
-              ),
-            ],
-          ),
-          SizedBox(
-            height: 25.0,
-          ),
-          buildAvatarProfile('Pham Thien Tan'),
-          SizedBox(
-            height: 20.0,
-          ),
-          buildTitleSetting('Account'),
-          BtnSetting(
-            icon: Icons.verified_user,
-            text: 'Thông tin cá nhân',
-            press: () {},
-          ),
-          BtnNotication(),
-          BtnSetting(
-            icon: Icons.transit_enterexit,
-            text: 'Bảng điểm',
-            press: () {},
-          ),
-          BtnSetting(
-            icon: Icons.point_of_sale_rounded,
-            text: 'Học phí',
-            press: () {},
-          ),
-          BtnSetting(
-            icon: Icons.calendar_today_sharp,
-            text: 'Lịch Thi',
-            press: () {},
-          ),
-          BtnSetting(
-            icon: Icons.list,
-            text: 'Danh sách lớp học phần đăng ký',
-            press: () {},
-          ),
-        ],
-      ),
-    ));
+                GestureDetector(
+                  onTap: () {
+                    print('setting');
+                  },
+                  child: Icon(
+                    Icons.settings_outlined,
+                    color: Colors.blueGrey,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 25.0,
+            ),
+            buildAvatarProfile('Pham Thien Tan'),
+            SizedBox(
+              height: 20.0,
+            ),
+            buildTitleSetting('Account'),
+            BtnViewProfile(),
+
+            BtnSetting(
+              icon: Icons.transit_enterexit,
+              text: 'Bảng điểm',
+              press: () {},
+            ),
+            BtnSetting(
+              icon: Icons.point_of_sale_rounded,
+              text: 'Học phí',
+              press: () {},
+            ),
+            BtnSetting(
+              icon: Icons.calendar_today_sharp,
+              text: 'Lịch Thi',
+              press: () {},
+            ),
+            BtnSetting(
+              icon: Icons.list,
+              text: 'Danh sách lớp học phần đăng ký',
+              press: () {},
+            ),
+            BtnNotication(),
+            BtnLogOut(),
+          ],
+        ),
+      )
+    );
   }
 
   Row buildTitleSetting(String title) {
@@ -132,11 +131,13 @@ class ProfileView extends GetView<ProfileViewController> {
                     spreadRadius: 8,
                   )
                 ],
-                image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(
-                      'https://petmaster.vn/petroom/wp-content/uploads/2020/04/meo-ai-cap.jpg'),
-                ))),
+                // image: DecorationImage(
+                //   fit: BoxFit.cover,
+                //   image: NetworkImage(
+                //       ''),
+                // )
+            )
+        ),
       ],
     );
   }

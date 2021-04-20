@@ -63,7 +63,7 @@ class HomeView extends GetView<HomeViewController> {
                           image: DecorationImage(
                             fit: BoxFit.cover,
                             image: NetworkImage(
-                                'https://petmaster.vn/petroom/wp-content/uploads/2020/04/meo-ai-cap.jpg'),
+                                'https://kenh14cdn.com/2018/10/19/photo-1-1539960492660791551744.png'),
                           ))),
                   SizedBox(
                     width: 20.0,
@@ -106,6 +106,23 @@ class HomeView extends GetView<HomeViewController> {
               ),
               child: ListView(
                 children: [
+                  _buildTitleRow('Thông Báo', 4),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        _buildTaskItem(1, 'thông báo nộp học phí học kỳ 2 @2021', Colors.red),
+                        _buildTaskItem(2, 'Hội thảo nghiên cứu khoa học', Colors.red),
+                        _buildTaskItem(3, 'Tuyển sinh 2022', Colors.red),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
                   _buildTitleRow('Lịch học hôm nay', 3),
                   SizedBox(
                     height: 20.0,
@@ -182,15 +199,19 @@ class HomeView extends GetView<HomeViewController> {
           ),
           Container(
             width: 100,
-            child: Text(
-              courseTitle,
-              style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-            ),
+            child: Expanded(
+              child: Text(
+                courseTitle,
+                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+              ),
+            )
           ),
         ],
       ),
     );
   }
+
+
 
   Container _buildClassItem(BuildContext context) {
     return Container(

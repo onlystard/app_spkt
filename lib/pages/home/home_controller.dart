@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
 class HomeViewController extends GetxController {
+
   @override
   void onClose() {
     super.onClose();

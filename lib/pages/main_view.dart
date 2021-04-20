@@ -14,7 +14,6 @@ class MainView extends GetView<MainController> {
         children: [
           HomeView(),
           NoticationView(),
-          null,
           CalendarView(),
           ProfileView(),
         ],
@@ -28,7 +27,7 @@ class MainView extends GetView<MainController> {
             backgroundColor: Color(0xFFF0F0F0),
             unselectedItemColor: Colors.grey,
             selectedItemColor: Colors.black,
-            selectedIconTheme: IconThemeData(color: Colors.blueGrey[600]),
+            selectedIconTheme: IconThemeData(color: Colors.teal[600]),
             type: BottomNavigationBarType.fixed,
             items: controller.navigationItems,
             currentIndex: value,

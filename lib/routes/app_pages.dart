@@ -1,4 +1,5 @@
 import 'package:app_spkt/core.dart';
+import 'package:app_spkt/pages/login/login_binding.dart';
 import 'package:get/get.dart';
 
 part 'app_routes.dart';
@@ -22,6 +23,6 @@ class AppPages {
     GetPage(
         name: Routes.LOGIN,
         page: () => PageLogin(),
-       )
+        binding: LoginBinding()),
   ];
 }
