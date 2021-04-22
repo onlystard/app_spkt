@@ -1,5 +1,7 @@
 import 'package:app_spkt/core.dart';
 import 'package:app_spkt/pages/profile/profile_controller.dart';
+import 'package:app_spkt/shared/widgets/change_password_profile.dart';
+import 'package:app_spkt/shared/widgets/edit_profile.dart';
 import 'package:app_spkt/shared/widgets/log_out_profile.dart';
 import 'package:app_spkt/shared/widgets/notication_profile.dart';
 import 'package:app_spkt/shared/widgets/setting_profile.dart';
@@ -32,7 +34,50 @@ class ProfileView extends GetView<ProfileViewController> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    print('setting');
+                    showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            content: Stack(
+                              overflow: Overflow.visible,
+                              children: <Widget>[
+                                Positioned(
+                                  right: -40.0,
+                                  top: -40.0,
+                                  child: InkResponse(
+                                    onTap: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: CircleAvatar(
+                                      child: Icon(Icons.close),
+                                      backgroundColor: Colors.red,
+                                    ),
+                                  ),
+                                ),
+                                Form(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    children: <Widget>[
+
+                                      BtEditProfile(),
+                                      BtChangePassword(),
+                                      BtnLogOut(),
+                                      Padding(
+                                        padding: EdgeInsets.all(8.0),
+                                        child: Text("name app, version 1.0.1 @2021", style: TextStyle(color: Colors.grey),),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.all(8.0),
+                                        child: Text("Power by SDC", style: TextStyle(color: Colors.grey)),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          );
+                        }
+                    );
                   },
                   child: Icon(
                     Icons.settings_outlined,
@@ -44,35 +89,11 @@ class ProfileView extends GetView<ProfileViewController> {
             SizedBox(
               height: 25.0,
             ),
-            buildAvatarProfile('Pham Thien Tan'),
+            buildAvatarProfile(''),
             SizedBox(
               height: 20.0,
             ),
-            buildTitleSetting('Account'),
             BtnViewProfile(),
-
-            BtnSetting(
-              icon: Icons.transit_enterexit,
-              text: 'Bảng điểm',
-              press: () {},
-            ),
-            BtnSetting(
-              icon: Icons.point_of_sale_rounded,
-              text: 'Học phí',
-              press: () {},
-            ),
-            BtnSetting(
-              icon: Icons.calendar_today_sharp,
-              text: 'Lịch Thi',
-              press: () {},
-            ),
-            BtnSetting(
-              icon: Icons.list,
-              text: 'Danh sách lớp học phần đăng ký',
-              press: () {},
-            ),
-            BtnNotication(),
-            BtnLogOut(),
           ],
         ),
       )
@@ -107,7 +128,7 @@ class ProfileView extends GetView<ProfileViewController> {
               style: TextStyle(
                   fontSize: 25.0,
                   fontWeight: FontWeight.w900,
-                  color: Colors.black),
+                  color: Colors.lightBlueAccent),
             ),
             SizedBox(
               height: 10.0,

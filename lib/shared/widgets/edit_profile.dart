@@ -2,15 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../core.dart';
 
-class BtnLogOut extends StatefulWidget {
+class BtEditProfile extends StatefulWidget {
   @override
-  _BtnLogOutState createState() => _BtnLogOutState();
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return _BtEditProfileState();
+  }
 }
 
-class _BtnLogOutState extends State<BtnLogOut> {
+class _BtEditProfileState extends State<BtEditProfile> {
   bool hide = false;
   final ButtonStyle flatButtonStyle = TextButton.styleFrom(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.indigoAccent,
       primary: Colors.white,
       padding: EdgeInsets.all(13),
       shape: const RoundedRectangleBorder(
@@ -27,11 +30,11 @@ class _BtnLogOutState extends State<BtnLogOut> {
               onPressed: () => Get.toNamed(Routes.HOME),
               child: Row(
                 children: [
-                  Icon(Icons.login_sharp),
+                  Icon(Icons.eco),
                   SizedBox(
                     width: 20,
                   ),
-                  Expanded(child: Text("LogOut")),
+                  Expanded(child: Text("Edit Profile")),
                   Icon(Icons.arrow_forward_ios)
                 ],
               ),
