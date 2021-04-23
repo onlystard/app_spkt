@@ -16,6 +16,11 @@ export 'profile/profile_binding.dart';
 export 'notications/notications_binding.dart';
 export 'notications/notications_controller.dart';
 export 'notications/notications_view.dart';
+export 'notications/thongbaohocphan.dart';
+export 'notications/thongbaochung.dart';
+export 'notications/thongbaototnghiep.dart';
 
 export 'login/page_login.dart';
 export 'login/login_controller.dart';
+
+export 'forgot_password/page_forgot_password.dart';
