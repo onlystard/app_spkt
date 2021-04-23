@@ -6,7 +6,20 @@ import '../../core.dart';
 class ThongbaohocphanView extends GetView<NoticationViewController> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: SafeArea(child: Text('Thong bao hoc phan')));
+    return Scaffold(
+        body: SafeArea(
+            child: ListView(
+      children: [
+        buildListTile("Thong bao", "Thong bao hoc phan"),
+        buildContainer(),
+        buildListTile("Thong bao", "Thong bao hoc phan"),
+        buildContainer(),
+        buildListTile("Thong bao", "Thong bao hoc phan"),
+        buildContainer(),
+        buildListTile("Thong bao", "Thong bao hoc phan"),
+        buildContainer(),
+      ],
+    )));
   }
 
   Container buildContainer() {
