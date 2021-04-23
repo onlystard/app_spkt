@@ -17,6 +17,10 @@ class NavigationService {
       ),
       BottomNavigationBarItem(
         label: '',
+        icon: Icon(Icons.list_outlined),
+      ),
+      BottomNavigationBarItem(
+        label: '',
         icon: Icon(Icons.account_circle),
       ),
     ];

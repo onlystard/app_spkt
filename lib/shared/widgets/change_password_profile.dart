@@ -1,12 +1,9 @@
 import 'package:app_spkt/pages/setting/change_password.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../../core.dart';
 
 class BtChangePassword extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _BtChangePasswordState();
   }
 }
@@ -31,9 +28,8 @@ class _BtChangePasswordState extends State<BtChangePassword> {
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                    builder: (context) => ChangePassword()
-                ),);
+                  MaterialPageRoute(builder: (context) => ChangePassword()),
+                );
               },
               child: Row(
                 children: [

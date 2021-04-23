@@ -6,4 +6,6 @@ abstract class Routes {
   static const PROFILE = '/profile';
   static const NOTICATION = '/notication';
   static const LOGIN = '/login';
+  static const VIEWPROFILE = '/profileview';
+  static const FORM = '/formview';
 }

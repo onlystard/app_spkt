@@ -1,11 +1,5 @@
 import 'package:app_spkt/core.dart';
-import 'package:app_spkt/pages/profile/profile_controller.dart';
-import 'package:app_spkt/shared/widgets/change_password_profile.dart';
-import 'package:app_spkt/shared/widgets/edit_profile.dart';
-import 'package:app_spkt/shared/widgets/log_out_profile.dart';
-import 'package:app_spkt/shared/widgets/notication_profile.dart';
-import 'package:app_spkt/shared/widgets/setting_profile.dart';
-import 'package:app_spkt/shared/widgets/viewprofile_profile.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -14,90 +8,109 @@ class ProfileView extends GetView<ProfileViewController> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SingleChildScrollView(
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
-
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    GestureDetector(
-                      onTap: () {},
-                      child: Icon(
-                        Icons.arrow_back_ios,
-                        color: Colors.blueGrey,
-                      ),
+      padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {},
+                    child: Icon(
+                      Icons.arrow_back_ios,
+                      color: Colors.blueGrey,
                     ),
-                  ],
-                ),
-                GestureDetector(
-                  onTap: () {
-                    showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          return AlertDialog(
-                            content: Stack(
-                              overflow: Overflow.visible,
-                              children: <Widget>[
-                                Positioned(
-                                  right: -40.0,
-                                  top: -40.0,
-                                  child: InkResponse(
-                                    onTap: () {
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      child: Icon(Icons.close),
-                                      backgroundColor: Colors.red,
-                                    ),
-                                  ),
-                                ),
-                                Form(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: <Widget>[
-
-                                      BtEditProfile(),
-                                      BtChangePassword(),
-                                      BtnLogOut(),
-                                      Padding(
-                                        padding: EdgeInsets.all(8.0),
-                                        child: Text("name app, version 1.0.1 @2021", style: TextStyle(color: Colors.grey),),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsets.all(8.0),
-                                        child: Text("Power by SDC", style: TextStyle(color: Colors.grey)),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          );
-                        }
-                    );
-                  },
-                  child: Icon(
-                    Icons.settings_outlined,
-                    color: Colors.blueGrey,
                   ),
+                ],
+              ),
+              GestureDetector(
+                onTap: () {
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          content: Stack(
+                            overflow: Overflow.visible,
+                            children: <Widget>[
+                              Positioned(
+                                right: -40.0,
+                                top: -40.0,
+                                child: InkResponse(
+                                  onTap: () {
+                                    Navigator.of(context).pop();
+                                  },
+                                  child: CircleAvatar(
+                                    child: Icon(Icons.close),
+                                    backgroundColor: Colors.red,
+                                  ),
+                                ),
+                              ),
+                              Form(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: <Widget>[
+                                    BtEditProfile(),
+                                    BtChangePassword(),
+                                    BtnLogOut(),
+                                    Padding(
+                                      padding: EdgeInsets.all(8.0),
+                                      child: Text(
+                                        "name app, version 1.0.1 @2021",
+                                        style: TextStyle(color: Colors.grey),
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsets.all(8.0),
+                                      child: Text("Power by SDC",
+                                          style: TextStyle(color: Colors.grey)),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      });
+                },
+                child: Icon(
+                  Icons.settings_outlined,
+                  color: Colors.blueGrey,
                 ),
-              ],
-            ),
-            SizedBox(
-              height: 25.0,
-            ),
-            buildAvatarProfile(''),
-            SizedBox(
-              height: 20.0,
-            ),
-            BtnViewProfile(),
-          ],
-        ),
-      )
-    );
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 25.0,
+          ),
+          buildAvatarProfile('Tan'),
+          SizedBox(
+            height: 20.0,
+          ),
+          BtnSetting(
+            icon: Icons.contact_page,
+            text: 'Thông tin cá nhân',
+            press: () => Get.toNamed(Routes.VIEWPROFILE),
+          ),
+          BtnNotication(),
+          BtnSetting(
+            text: 'Chương trình đào tạo',
+            icon: Icons.school_outlined,
+          ),
+          BtnSetting(
+            text: 'Bảng điểm',
+            icon: Icons.control_point,
+          ),
+          BtnSetting(
+            text: 'Lịch thi',
+            icon: Icons.calendar_today,
+          ),
+          BtnSetting(text: 'Học phí', icon: Icons.point_of_sale),
+          BtnSetting(text: 'Danh sách lớp học phần', icon: Icons.list),
+        ],
+      ),
+    ));
   }
 
   Row buildTitleSetting(String title) {
@@ -143,22 +156,21 @@ class ProfileView extends GetView<ProfileViewController> {
             width: 70.0,
             height: 70.0,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(90.0),
-                border: Border.all(width: 1, color: Colors.white),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.blueGrey.withOpacity(0.2),
-                    blurRadius: 12,
-                    spreadRadius: 8,
-                  )
-                ],
-                // image: DecorationImage(
-                //   fit: BoxFit.cover,
-                //   image: NetworkImage(
-                //       ''),
-                // )
-            )
-        ),
+              borderRadius: BorderRadius.circular(90.0),
+              border: Border.all(width: 1, color: Colors.white),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.blueGrey.withOpacity(0.2),
+                  blurRadius: 12,
+                  spreadRadius: 8,
+                )
+              ],
+              // image: DecorationImage(
+              //   fit: BoxFit.cover,
+              //   image: NetworkImage(
+              //       ''),
+              // )
+            )),
       ],
     );
   }

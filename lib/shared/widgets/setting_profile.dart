@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class BtnSetting extends StatelessWidget {
   final ButtonStyle flatButtonStyle = TextButton.styleFrom(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.white38,
       primary: Color(0xFFF0F0F0),
       padding: EdgeInsets.all(13),
       shape: const RoundedRectangleBorder(
@@ -21,12 +21,20 @@ class BtnSetting extends StatelessWidget {
         onPressed: press,
         child: Row(
           children: [
-            Icon(icon),
+            Icon(
+              icon,
+              color: Colors.black,
+            ),
             SizedBox(
               width: 20,
             ),
-            Expanded(child: Text("$text")),
-            Icon(Icons.arrow_forward_ios)
+            Expanded(
+              child: Text("$text", style: TextStyle(color: Colors.black)),
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              color: Colors.black,
+            )
           ],
         ),
       ),

@@ -24,3 +24,7 @@ export 'login/page_login.dart';
 export 'login/login_controller.dart';
 
 export 'forgot_password/page_forgot_password.dart';
+
+export 'form/form_binding.dart';
+export 'form/form_controller.dart';
+export 'form/form_view.dart';

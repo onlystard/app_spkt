@@ -8,7 +8,7 @@ class BtnNotication extends StatefulWidget {
 class _BtnNoticationState extends State<BtnNotication> {
   bool hide = false;
   final ButtonStyle flatButtonStyle = TextButton.styleFrom(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.white38,
       primary: Colors.white,
       padding: EdgeInsets.all(13),
       shape: const RoundedRectangleBorder(
@@ -29,12 +29,24 @@ class _BtnNoticationState extends State<BtnNotication> {
               },
               child: Row(
                 children: [
-                  Icon(Icons.phone_android),
+                  Icon(Icons.notifications_active, color: Colors.black),
                   SizedBox(
                     width: 20,
                   ),
-                  Expanded(child: Text("Thông tin ứng dụng")),
-                 // Icon(Icons.arrow_forward_ios)
+                  Expanded(
+                    child: Text(
+                      "Thông báo",
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  Icon(
+                    Icons.arrow_forward_ios,
+                    color: Colors.black,
+                  ),
+
+                  // Icon(Icons.arrow_forward_ios)
                 ],
               ),
             ),
@@ -49,11 +61,19 @@ class _BtnNoticationState extends State<BtnNotication> {
             physics: NeverScrollableScrollPhysics(),
             children: [
               ListTile(
-                title: Text('app spkt'),
+                title: Text('Thông báo từ giảng viên'),
                 onTap: () {},
               ),
               ListTile(
-                title: Text('version 1.0.1@2021'),
+                title: Text('Thông báo từ lớp học phần'),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text('Thông báo từ lớp sinh hoạt'),
+                onTap: () {},
+              ),
+              ListTile(
+                title: Text('Thông báo từ phòng đào tạo'),
                 onTap: () {},
               ),
             ],

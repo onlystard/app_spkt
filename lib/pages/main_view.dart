@@ -15,6 +15,7 @@ class MainView extends GetView<MainController> {
           HomeView(),
           NoticationView(),
           CalendarView(),
+          FormView(),
           ProfileView(),
         ],
       ),

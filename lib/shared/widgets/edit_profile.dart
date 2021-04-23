@@ -5,7 +5,6 @@ import '../../core.dart';
 class BtEditProfile extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _BtEditProfileState();
   }
 }
@@ -27,7 +26,7 @@ class _BtEditProfileState extends State<BtEditProfile> {
             padding: EdgeInsets.symmetric(vertical: 10),
             child: TextButton(
               style: flatButtonStyle,
-              onPressed: () => Get.toNamed(Routes.HOME),
+              onPressed: () {},
               child: Row(
                 children: [
                   Icon(Icons.eco),

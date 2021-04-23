@@ -21,8 +21,9 @@ class AppPages {
         page: () => NoticationView(),
         binding: NoticationViewBinding()),
     GetPage(
-        name: Routes.LOGIN,
-        page: () => PageLogin(),
-        binding: LoginBinding()),
+        name: Routes.FORM, page: () => FormView(), binding: FormViewBinding()),
+    GetPage(
+        name: Routes.LOGIN, page: () => PageLogin(), binding: LoginBinding()),
+    GetPage(name: Routes.VIEWPROFILE, page: () => BtnViewProfile())
   ];
 }
