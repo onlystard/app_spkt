@@ -1,4 +1,3 @@
-import 'package:app_spkt/core.dart';
 import 'package:flutter/material.dart';
 
 class BtnViewProfile extends StatefulWidget {

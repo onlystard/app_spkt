@@ -1,6 +1,6 @@
+import 'package:app_spkt/core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../core.dart';
 
 class BtnLogOut extends StatefulWidget {
   @override
@@ -24,7 +24,7 @@ class _BtnLogOutState extends State<BtnLogOut> {
             padding: EdgeInsets.symmetric(vertical: 10),
             child: TextButton(
               style: flatButtonStyle,
-              onPressed: () => Get.toNamed(Routes.HOME),
+              onPressed: () => Get.offAll(() => PageLogin()),
               child: Row(
                 children: [
                   Icon(Icons.login_sharp),

@@ -9,5 +9,6 @@ class MainBinding extends Bindings {
     Get.put<ProfileViewController>(ProfileViewController());
     Get.put<CalendarViewController>(CalendarViewController());
     Get.put<NoticationViewController>(NoticationViewController());
+    Get.put<LoginController>(LoginController());
   }
 }

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import '../../core.dart';
 
 class BtEditProfile extends StatefulWidget {
   @override

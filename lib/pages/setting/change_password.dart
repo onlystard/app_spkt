@@ -12,9 +12,9 @@ class ChangePassword extends StatefulWidget {
 // ignore: camel_case_types
 class ChangePasswordState extends State {
   // ignore: non_constant_identifier_names
-  final TextEditingController _TextControllerPass = TextEditingController();
-  final TextEditingController _TextControllerNewPass = TextEditingController();
-  final TextEditingController _TextControllerConfirmPass =
+  final TextEditingController _textEditingController = TextEditingController();
+  final TextEditingController _textControllerNewPass = TextEditingController();
+  final TextEditingController _textcontrollerConfirmPass =
       TextEditingController();
   bool isNameValid = true;
   Color txtClolor = Colors.white;
@@ -22,9 +22,9 @@ class ChangePasswordState extends State {
   @override
   void dispose() {
     super.dispose();
-    _TextControllerPass.dispose();
-    _TextControllerNewPass.dispose();
-    _TextControllerConfirmPass.dispose();
+    _textEditingController.dispose();
+    _textControllerNewPass.dispose();
+    _textcontrollerConfirmPass.dispose();
   }
 
   @override
@@ -32,7 +32,7 @@ class ChangePasswordState extends State {
     final userName = TextField(
       onChanged: (value) {},
       keyboardType: TextInputType.text,
-      controller: _TextControllerNewPass,
+      controller: _textControllerNewPass,
       autofocus: false,
       decoration: InputDecoration(
         hintText: 'Enter your new pass...',
@@ -41,13 +41,11 @@ class ChangePasswordState extends State {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
       ),
     );
-    final sendButton = new FlatButton(
-      child: txt,
-      textColor: txtClolor,
-      color: Theme.of(context).primaryColor,
-      splashColor: Colors.white,
+
+    final ButtonStyle flatButtonStyle = TextButton.styleFrom(
+      backgroundColor: Theme.of(context).primaryColor,
+      primary: txtClolor,
       padding: EdgeInsets.only(left: 50.0, right: 50.0),
-      onPressed: () async {},
     );
     return Scaffold(
         appBar: AppBar(
@@ -77,7 +75,11 @@ class ChangePasswordState extends State {
               SizedBox(
                 height: 30.0,
               ),
-              sendButton
+              TextButton(
+                onPressed: () {},
+                style: flatButtonStyle,
+                child: txt,
+              ),
             ],
           ),
         ));

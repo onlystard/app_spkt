@@ -32,7 +32,7 @@ class ProfileView extends GetView<ProfileViewController> {
                       builder: (BuildContext context) {
                         return AlertDialog(
                           content: Stack(
-                            overflow: Overflow.visible,
+                            clipBehavior: Clip.none,
                             children: <Widget>[
                               Positioned(
                                 right: -40.0,
