@@ -38,14 +38,13 @@ class NoticationView extends GetView<NoticationViewController> {
                           indicatorSize: MD2IndicatorSize.full),
                       tabs: [
                         Tab(
-                          child: Text('Thông báo chung'),
+                          child: Text('thongbaochung'.tr),
                         ),
                         Tab(
-                          child: Text('TB đến lớp học phần'),
+                          child: Text('thongbaohocphan'.tr),
                         ),
                         Tab(
-                          child: Text(
-                              'TB về nhận Đồ án tốt nghiệp & công nhận tốt nghiệp'),
+                          child: Text('thongbaototnghiep'.tr),
                         ),
                       ]),
                 )

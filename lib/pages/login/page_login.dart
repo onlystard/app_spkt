@@ -51,7 +51,7 @@ class PageLogin extends GetView<LoginController> {
       autofocus: false,
       decoration: InputDecoration(
         prefixIcon: Icon(Icons.account_box),
-        hintText: 'Enter your username...',
+        hintText: 'usernametext'.tr,
         hintStyle: TextStyle(fontSize: 13.0, color: Colors.grey),
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
@@ -72,7 +72,7 @@ class PageLogin extends GetView<LoginController> {
               },
             ),
             prefixIcon: Icon(Icons.vpn_key),
-            hintText: 'Enter your Password...',
+            hintText: 'passwordtext'.tr,
             hintStyle: TextStyle(fontSize: 13.0, color: Colors.grey),
             contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
             border:
@@ -80,13 +80,13 @@ class PageLogin extends GetView<LoginController> {
           ),
         ));
     final _loginButton = new TextButton(
-      child: Text("Login"),
+      child: Text('login'.tr),
       style: flatButtonStyle,
       onPressed: () => Get.off(() => MainView()),
     );
     final _forgotLabel = TextButton(
         child: Text(
-          'Forgot password',
+          'forgotpassword'.tr,
           style: TextStyle(color: Colors.black54, fontSize: 15.0),
         ),
         onPressed: () => Get.toNamed(Routes.FORGOTPASSWORD));

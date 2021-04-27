@@ -21,7 +21,7 @@ class FormView extends GetView<FormViewController> {
                   width: 20,
                 ),
                 Text(
-                  'Danh sách biểu mẫu của sinh viên',
+                  'bieumau'.tr,
                   style: TextStyle(fontSize: 16),
                 )
               ],
@@ -53,7 +53,7 @@ class FormView extends GetView<FormViewController> {
         tileColor: Colors.lightBlueAccent[50],
         title: Text("$text"),
         subtitle: Text("$subtext"),
-        onTap: () => showToastNoti("hello"));
+        onTap: () => Get.snackbar('Hi', 'i am a modern snackbar'));
   }
 
   Container buildContainer() {

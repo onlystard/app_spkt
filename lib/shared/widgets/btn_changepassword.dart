@@ -1,16 +1,18 @@
+import 'package:app_spkt/core.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class BtEditProfile extends StatefulWidget {
+class BtChangePassword extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _BtEditProfileState();
+    return _BtChangePasswordState();
   }
 }
 
-class _BtEditProfileState extends State<BtEditProfile> {
+class _BtChangePasswordState extends State<BtChangePassword> {
   bool hide = false;
   final ButtonStyle flatButtonStyle = TextButton.styleFrom(
-      backgroundColor: Colors.indigoAccent,
+      backgroundColor: Colors.blueAccent,
       primary: Colors.white,
       padding: EdgeInsets.all(13),
       shape: const RoundedRectangleBorder(
@@ -24,14 +26,14 @@ class _BtEditProfileState extends State<BtEditProfile> {
             padding: EdgeInsets.symmetric(vertical: 10),
             child: TextButton(
               style: flatButtonStyle,
-              onPressed: () {},
+              onPressed: () => Get.toNamed(Routes.CHANGEPASSWORD),
               child: Row(
                 children: [
-                  Icon(Icons.eco),
+                  Icon(Icons.admin_panel_settings),
                   SizedBox(
                     width: 20,
                   ),
-                  Expanded(child: Text("Edit Profile")),
+                  Expanded(child: Text('doimatkhau'.tr)),
                   Icon(Icons.arrow_forward_ios)
                 ],
               ),

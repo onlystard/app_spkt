@@ -33,7 +33,7 @@ class PageFogotPasswordState extends State {
       controller: _TextControllerUserName,
       autofocus: false,
       decoration: InputDecoration(
-        hintText: 'Enter your Email...',
+        hintText: 'enteryouremail'.tr,
         hintStyle: TextStyle(fontSize: 13.0, color: Colors.grey),
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
@@ -55,7 +55,7 @@ class PageFogotPasswordState extends State {
               );
             },
           ),
-          title: Text('Forgot password'),
+          title: Text('forgotpassword'.tr),
         ),
         body: SingleChildScrollView(
           child: Column(

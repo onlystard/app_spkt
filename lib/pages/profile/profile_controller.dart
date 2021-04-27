@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 
 class ProfileViewController extends GetxController {
+  final selectedLang = 'vi'.obs;
+
   @override
   void onClose() {
     super.onClose();

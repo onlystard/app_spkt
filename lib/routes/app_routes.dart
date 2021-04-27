@@ -9,4 +9,5 @@ abstract class Routes {
   static const VIEWPROFILE = '/profileview';
   static const FORM = '/formview';
   static const FORGOTPASSWORD = '/forgotPassWord';
+  static const CHANGEPASSWORD = '/changePassword';
 }

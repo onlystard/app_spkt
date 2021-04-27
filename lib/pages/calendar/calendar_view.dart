@@ -47,7 +47,7 @@ class CalendarView extends GetView<CalendarViewController> {
                 ],
               ),
               Text(
-                "Today",
+                "today".tr,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Color(0XFF3E3993),
@@ -81,6 +81,7 @@ class CalendarView extends GetView<CalendarViewController> {
                         initialSelectedDate: DateTime.now(),
                         selectionColor: Colors.blueGrey,
                         selectedTextColor: Colors.white,
+                        locale: 'ngonngu'.tr,
                         onDateChange: (date) {
                           controller.selectedValue = date;
                         },

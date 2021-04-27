@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class BtnNotication extends StatefulWidget {
   @override
@@ -35,7 +36,7 @@ class _BtnNoticationState extends State<BtnNotication> {
                   ),
                   Expanded(
                     child: Text(
-                      "Thông báo",
+                      "notification".tr,
                       style: TextStyle(
                         color: Colors.black,
                       ),
@@ -61,19 +62,19 @@ class _BtnNoticationState extends State<BtnNotication> {
             physics: NeverScrollableScrollPhysics(),
             children: [
               ListTile(
-                title: Text('Thông báo từ giảng viên'),
+                title: Text('thongbaogiangvien'.tr),
                 onTap: () {},
               ),
               ListTile(
-                title: Text('Thông báo từ lớp học phần'),
+                title: Text('thongbaolophocphan'.tr),
                 onTap: () {},
               ),
               ListTile(
-                title: Text('Thông báo từ lớp sinh hoạt'),
+                title: Text('thongbaolop'.tr),
                 onTap: () {},
               ),
               ListTile(
-                title: Text('Thông báo từ phòng đào tạo'),
+                title: Text('thongbaodaotao'.tr),
                 onTap: () {},
               ),
             ],

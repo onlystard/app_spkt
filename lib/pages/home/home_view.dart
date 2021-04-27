@@ -72,7 +72,7 @@ class HomeView extends GetView<HomeViewController> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        'Hi',
+                        'hi'.tr,
                         style: TextStyle(
                           fontSize: 25.0,
                           fontWeight: FontWeight.w900,
@@ -83,7 +83,7 @@ class HomeView extends GetView<HomeViewController> {
                         height: 10.0,
                       ),
                       Text(
-                        'Chào mừng quay trở lại',
+                        'chaomung'.tr,
                         style:
                             TextStyle(fontSize: 13.0, color: Colors.blueGrey),
                       )
@@ -106,7 +106,7 @@ class HomeView extends GetView<HomeViewController> {
               ),
               child: ListView(
                 children: [
-                  _buildTitleRow('Thông Báo', 4),
+                  _buildTitleRow('notification'.tr, 4),
                   SizedBox(
                     height: 20,
                   ),
@@ -114,8 +114,10 @@ class HomeView extends GetView<HomeViewController> {
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       children: [
-                        _buildTaskItem(1, 'thông báo nộp học phí học kỳ 2 @2021', Colors.red),
-                        _buildTaskItem(2, 'Hội thảo nghiên cứu khoa học', Colors.red),
+                        _buildTaskItem(1,
+                            'thông báo nộp học phí học kỳ 2 @2021', Colors.red),
+                        _buildTaskItem(
+                            2, 'Hội thảo nghiên cứu khoa học', Colors.red),
                         _buildTaskItem(3, 'Tuyển sinh 2022', Colors.red),
                       ],
                     ),
@@ -123,7 +125,7 @@ class HomeView extends GetView<HomeViewController> {
                   SizedBox(
                     height: 20.0,
                   ),
-                  _buildTitleRow('Lịch học hôm nay', 3),
+                  _buildTitleRow('lichhoc'.tr, 3),
                   SizedBox(
                     height: 20.0,
                   ),
@@ -132,7 +134,7 @@ class HomeView extends GetView<HomeViewController> {
                   SizedBox(
                     height: 25.0,
                   ),
-                  _buildTitleRow('Lịch Thi', 4),
+                  _buildTitleRow('lichkiemtra'.tr, 4),
                   SizedBox(
                     height: 20,
                   ),
@@ -169,7 +171,7 @@ class HomeView extends GetView<HomeViewController> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Sắp đến",
+            "sapden".tr,
             style: TextStyle(fontSize: 10, color: Colors.grey),
           ),
           SizedBox(
@@ -198,20 +200,17 @@ class HomeView extends GetView<HomeViewController> {
             height: 20,
           ),
           Container(
-            width: 100,
-            child: Expanded(
-              child: Text(
-                courseTitle,
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-              ),
-            )
-          ),
+              width: 100,
+              child: Expanded(
+                child: Text(
+                  courseTitle,
+                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                ),
+              )),
         ],
       ),
     );
   }
-
-
 
   Container _buildClassItem(BuildContext context) {
     return Container(
@@ -319,7 +318,7 @@ class HomeView extends GetView<HomeViewController> {
               ]),
         ),
         Text(
-          "See all",
+          "seeall".tr,
           style: TextStyle(
               fontSize: 12,
               color: Color(0XFF3E3993),
