@@ -9,6 +9,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      translations: Messages(),
+      locale: Get.deviceLocale,
+      fallbackLocale: Locale('vi'),
       title: 'Spkt App',
       theme: ThemeData(
         primarySwatch: Colors.blue,

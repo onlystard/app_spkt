@@ -1,53 +1,28 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-// ignore: camel_case_types
-class ChangePassword extends StatefulWidget {
-  @override
-  State<StatefulWidget> createState() {
-    return ChangePasswordState();
-  }
-}
+import '../../core.dart';
 
-// ignore: camel_case_types
-class ChangePasswordState extends State {
-  // ignore: non_constant_identifier_names
-  final TextEditingController _TextControllerPass = TextEditingController();
-  final TextEditingController _TextControllerNewPass = TextEditingController();
-  final TextEditingController _TextControllerConfirmPass =
-      TextEditingController();
-  bool isNameValid = true;
-  Color txtClolor = Colors.white;
-  var txt = Text('Save');
-  @override
-  void dispose() {
-    super.dispose();
-    _TextControllerPass.dispose();
-    _TextControllerNewPass.dispose();
-    _TextControllerConfirmPass.dispose();
-  }
-
+class ChangePasswordPage extends GetView<SettingPageController> {
   @override
   Widget build(BuildContext context) {
     final userName = TextField(
       onChanged: (value) {},
       keyboardType: TextInputType.text,
-      controller: _TextControllerNewPass,
+      controller: controller.textControllerNewPass,
       autofocus: false,
       decoration: InputDecoration(
-        hintText: 'Enter your new pass...',
+        hintText: 'newpass'.tr,
         hintStyle: TextStyle(fontSize: 13.0, color: Colors.grey),
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
       ),
     );
-    final sendButton = new FlatButton(
-      child: txt,
-      textColor: txtClolor,
-      color: Theme.of(context).primaryColor,
-      splashColor: Colors.white,
+
+    final ButtonStyle flatButtonStyle = TextButton.styleFrom(
+      backgroundColor: Theme.of(context).primaryColor,
+      primary: controller.txtClolor,
       padding: EdgeInsets.only(left: 50.0, right: 50.0),
-      onPressed: () async {},
     );
     return Scaffold(
         appBar: AppBar(
@@ -56,13 +31,13 @@ class ChangePasswordState extends State {
               return IconButton(
                 icon: const Icon(Icons.arrow_back_outlined),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Get.back();
                 },
                 tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
               );
             },
           ),
-          title: Text('Save'),
+          title: Text('doimatkhau'.tr),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -77,11 +52,14 @@ class ChangePasswordState extends State {
               SizedBox(
                 height: 30.0,
               ),
-              sendButton
+              TextButton(
+                onPressed: () =>
+                    Get.snackbar('doi thanh cong', 'doi thanh cong'),
+                style: flatButtonStyle,
+                child: controller.txt,
+              ),
             ],
           ),
         ));
   }
-
-  Map<String, String> headers = {"Content-type": "application/json"};
 }

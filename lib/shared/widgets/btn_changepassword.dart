@@ -1,16 +1,18 @@
+import 'package:app_spkt/core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../core.dart';
 
-class BtnLogOut extends StatefulWidget {
+class BtChangePassword extends StatefulWidget {
   @override
-  _BtnLogOutState createState() => _BtnLogOutState();
+  State<StatefulWidget> createState() {
+    return _BtChangePasswordState();
+  }
 }
 
-class _BtnLogOutState extends State<BtnLogOut> {
+class _BtChangePasswordState extends State<BtChangePassword> {
   bool hide = false;
   final ButtonStyle flatButtonStyle = TextButton.styleFrom(
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.blueAccent,
       primary: Colors.white,
       padding: EdgeInsets.all(13),
       shape: const RoundedRectangleBorder(
@@ -24,14 +26,14 @@ class _BtnLogOutState extends State<BtnLogOut> {
             padding: EdgeInsets.symmetric(vertical: 10),
             child: TextButton(
               style: flatButtonStyle,
-              onPressed: () => Get.toNamed(Routes.HOME),
+              onPressed: () => Get.toNamed(Routes.CHANGEPASSWORD),
               child: Row(
                 children: [
-                  Icon(Icons.login_sharp),
+                  Icon(Icons.admin_panel_settings),
                   SizedBox(
                     width: 20,
                   ),
-                  Expanded(child: Text("LogOut")),
+                  Expanded(child: Text('doimatkhau'.tr)),
                   Icon(Icons.arrow_forward_ios)
                 ],
               ),

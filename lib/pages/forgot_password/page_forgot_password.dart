@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 // ignore: camel_case_types
 class PageFogotPassword extends StatefulWidget {
@@ -32,19 +33,16 @@ class PageFogotPasswordState extends State {
       controller: _TextControllerUserName,
       autofocus: false,
       decoration: InputDecoration(
-        hintText: 'Enter your Email...',
+        hintText: 'enteryouremail'.tr,
         hintStyle: TextStyle(fontSize: 13.0, color: Colors.grey),
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
       ),
     );
-    final sendButton = new FlatButton(
-      child: txt,
-      textColor: txtClolor,
-      color: Theme.of(context).primaryColor,
-      splashColor: Colors.white,
+    final ButtonStyle flatButtonStyle = TextButton.styleFrom(
+      backgroundColor: Theme.of(context).primaryColor,
+      primary: txtClolor,
       padding: EdgeInsets.only(left: 50.0, right: 50.0),
-      onPressed: () async {},
     );
     return Scaffold(
         appBar: AppBar(
@@ -52,14 +50,12 @@ class PageFogotPasswordState extends State {
             builder: (BuildContext context) {
               return IconButton(
                 icon: const Icon(Icons.arrow_back_outlined),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+                onPressed: () => Get.back(),
                 tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
               );
             },
           ),
-          title: Text('Forgot password'),
+          title: Text('forgotpassword'.tr),
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -74,7 +70,13 @@ class PageFogotPasswordState extends State {
               SizedBox(
                 height: 30.0,
               ),
-              sendButton
+              TextButton(
+                onPressed: () => Get.snackbar(
+                    'Forgot password', 'Gui thanh cong',
+                    snackPosition: SnackPosition.BOTTOM),
+                child: txt,
+                style: flatButtonStyle,
+              )
             ],
           ),
         ));

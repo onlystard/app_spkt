@@ -15,15 +15,13 @@ class PageLogin extends GetView<LoginController> {
               title: new Text('Are you sure?'),
               content: new Text('Do you want to exit app ?'),
               actions: <Widget>[
-                // ignore: deprecated_member_use
-                new FlatButton(
+                new TextButton(
                   onPressed: () => Navigator.of(context).pop(false),
                   child: new Text(
                     'No',
                   ),
                 ),
-                // ignore: deprecated_member_use
-                new FlatButton(
+                new TextButton(
                   onPressed: () {
                     Future.delayed(const Duration(milliseconds: 1000), () {
                       SystemChannels.platform
@@ -41,61 +39,57 @@ class PageLogin extends GetView<LoginController> {
           false;
     }
 
-    final userName = TextField(
+    final ButtonStyle flatButtonStyle = TextButton.styleFrom(
+      backgroundColor: Theme.of(context).primaryColor,
+      primary: Colors.white,
+      padding: EdgeInsets.only(left: 50, right: 50),
+    );
+    final _username = TextField(
       onChanged: (value) {},
       keyboardType: TextInputType.text,
       controller: controller.textControllerUserName,
       autofocus: false,
       decoration: InputDecoration(
         prefixIcon: Icon(Icons.account_box),
-        hintText: 'Enter your userName...',
+        hintText: 'usernametext'.tr,
         hintStyle: TextStyle(fontSize: 13.0, color: Colors.grey),
         contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
       ),
     );
-    // ignore: non_constant_identifier_names
-    final Password = TextField(
-      onChanged: (value) {},
-      autofocus: false,
-      obscureText: controller.isObscure,
-      controller: controller.textControllerPassword,
-      decoration: InputDecoration(
-        suffixIcon: IconButton(
-            icon: Icon(
-                controller.isObscure ? Icons.visibility : Icons.visibility_off),
-            onPressed: () {
-              controller.isObscure = !controller.isObscure;
-            }),
-        prefixIcon: Icon(Icons.vpn_key),
-        hintText: 'Enter your Password...',
-        hintStyle: TextStyle(fontSize: 13.0, color: Colors.grey),
-        contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
-      ),
+    final _btnpassword = Obx(() => TextField(
+          onChanged: (value) {},
+          autofocus: false,
+          obscureText: controller.isObscure.value,
+          controller: controller.textControllerPassword,
+          decoration: InputDecoration(
+            suffixIcon: IconButton(
+              icon: Icon(controller.isObscure.value
+                  ? Icons.visibility
+                  : Icons.visibility_off),
+              onPressed: () {
+                controller.isObscure.value = !controller.isObscure.value;
+              },
+            ),
+            prefixIcon: Icon(Icons.vpn_key),
+            hintText: 'passwordtext'.tr,
+            hintStyle: TextStyle(fontSize: 13.0, color: Colors.grey),
+            contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+            border:
+                OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
+          ),
+        ));
+    final _loginButton = new TextButton(
+      child: Text('login'.tr),
+      style: flatButtonStyle,
+      onPressed: () => Get.off(() => MainView()),
     );
-    // ignore: deprecated_member_use
-    final loginButton = new FlatButton(
-      child: Text("Login"),
-      textColor: Colors.white,
-      color: Theme.of(context).primaryColor,
-      splashColor: Colors.white,
-      padding: EdgeInsets.only(left: 50.0, right: 50.0),
-      onPressed: () => Get.toNamed(Routes.HOME),
-    );
-    // ignore: deprecated_member_use
-    final forgotLabel = FlatButton(
-      child: Text(
-        'Forgot password',
-        style: TextStyle(color: Colors.black54, fontSize: 15.0),
-      ),
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => PageFogotPassword()),
-        );
-      },
-    );
+    final _forgotLabel = TextButton(
+        child: Text(
+          'forgotpassword'.tr,
+          style: TextStyle(color: Colors.black54, fontSize: 15.0),
+        ),
+        onPressed: () => Get.toNamed(Routes.FORGOTPASSWORD));
     return WillPopScope(
         onWillPop: _onWillPop,
         child: new Scaffold(
@@ -142,11 +136,11 @@ class PageLogin extends GetView<LoginController> {
                                             border: Border(
                                                 bottom: BorderSide(
                                                     color: Colors.grey[100]))),
-                                        child: userName),
+                                        child: _username),
                                     Container(
                                         margin: EdgeInsets.only(top: 10.0),
                                         padding: EdgeInsets.all(8.0),
-                                        child: Password),
+                                        child: _btnpassword),
                                   ],
                                 ),
                               )),
@@ -162,7 +156,7 @@ class PageLogin extends GetView<LoginController> {
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
                                       color: Color.fromRGBO(143, 148, 251, .6)),
-                                  child: loginButton)),
+                                  child: _loginButton)),
                           SizedBox(
                             height: 15,
                           ),
@@ -173,7 +167,7 @@ class PageLogin extends GetView<LoginController> {
                                 width: MediaQuery.of(context).size.width * 0.65,
                                 margin: EdgeInsets.only(top: 0.0),
                                 alignment: Alignment.topRight,
-                                child: Center(child: forgotLabel)),
+                                child: Center(child: _forgotLabel)),
                           ),
                         ],
                       ),

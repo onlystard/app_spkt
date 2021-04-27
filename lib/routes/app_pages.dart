@@ -17,13 +17,16 @@ class AppPages {
         page: () => ProfileView(),
         binding: ProfileViewBinding()),
     GetPage(
-        name: Routes.NOTICATION,
-        page: () => NoticationView(),
-        binding: NoticationViewBinding()),
+      name: Routes.NOTICATION,
+      page: () => NoticationView(),
+      binding: NoticationViewBinding(),
+    ),
     GetPage(
         name: Routes.FORM, page: () => FormView(), binding: FormViewBinding()),
     GetPage(
         name: Routes.LOGIN, page: () => PageLogin(), binding: LoginBinding()),
-    GetPage(name: Routes.VIEWPROFILE, page: () => BtnViewProfile())
+    GetPage(name: Routes.VIEWPROFILE, page: () => ProfileViewPage()),
+    GetPage(name: Routes.FORGOTPASSWORD, page: () => PageFogotPassword()),
+    GetPage(name: Routes.CHANGEPASSWORD, page: () => ChangePasswordPage()),
   ];
 }

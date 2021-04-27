@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../core.dart';
 
 class BtEditProfile extends StatefulWidget {
   @override
@@ -33,7 +32,7 @@ class _BtEditProfileState extends State<BtEditProfile> {
                   SizedBox(
                     width: 20,
                   ),
-                  Expanded(child: Text("Edit Profile")),
+                  Expanded(child: Text('editprofile'.tr)),
                   Icon(Icons.arrow_forward_ios)
                 ],
               ),

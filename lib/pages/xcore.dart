@@ -12,6 +12,7 @@ export 'calendar/calendar_binding.dart';
 export 'profile/profile_controller.dart';
 export 'profile/profile_view.dart';
 export 'profile/profile_binding.dart';
+export 'profile/profileview_page.dart';
 
 export 'notications/notications_binding.dart';
 export 'notications/notications_controller.dart';
@@ -28,3 +29,7 @@ export 'forgot_password/page_forgot_password.dart';
 export 'form/form_binding.dart';
 export 'form/form_controller.dart';
 export 'form/form_view.dart';
+
+export 'setting/change_password.dart';
+export 'setting/setting_controller.dart';
+export 'setting/setting_binding.dart';

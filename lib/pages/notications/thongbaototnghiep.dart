@@ -40,6 +40,6 @@ class ThongbaototnghiepView extends GetView<NoticationViewController> {
         tileColor: Colors.lightBlueAccent[50],
         title: Text("$text"),
         subtitle: Text("$subtext"),
-        onTap: () => showToastNoti("hello"));
+        onTap: () => Get.snackbar('Hi', 'i am a modern snackbar'));
   }
 }

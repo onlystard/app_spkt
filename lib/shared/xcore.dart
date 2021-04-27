@@ -1,10 +1,9 @@
-export 'widgets/setting_profile.dart';
-export 'widgets/notication_profile.dart';
-export 'widgets/log_out_profile.dart';
-export 'widgets/show_toast_noti.dart';
-export 'widgets/viewprofile_profile.dart';
-export 'widgets/change_password_profile.dart';
-export 'widgets/edit_profile.dart';
+export 'widgets/btn_setting_profile.dart';
+export 'widgets/btn_notification_profile.dart';
+export 'widgets/btn_logout.dart';
+
+export 'widgets/btn_changepassword.dart';
+export 'widgets/btn_edit_profile.dart';
 
 export 'animation/FadeAnimation.dart';
 export 'animation/animation.dart';

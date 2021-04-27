@@ -14,16 +14,12 @@ class ProfileView extends GetView<ProfileViewController> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  GestureDetector(
-                    onTap: () {},
-                    child: Icon(
-                      Icons.arrow_back_ios,
-                      color: Colors.blueGrey,
-                    ),
-                  ),
-                ],
+              GestureDetector(
+                onTap: () {},
+                child: Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.blueGrey,
+                ),
               ),
               GestureDetector(
                 onTap: () {
@@ -32,14 +28,14 @@ class ProfileView extends GetView<ProfileViewController> {
                       builder: (BuildContext context) {
                         return AlertDialog(
                           content: Stack(
-                            overflow: Overflow.visible,
+                            clipBehavior: Clip.none,
                             children: <Widget>[
                               Positioned(
                                 right: -40.0,
                                 top: -40.0,
                                 child: InkResponse(
                                   onTap: () {
-                                    Navigator.of(context).pop();
+                                    Get.back();
                                   },
                                   child: CircleAvatar(
                                     child: Icon(Icons.close),
@@ -54,6 +50,34 @@ class ProfileView extends GetView<ProfileViewController> {
                                     BtEditProfile(),
                                     BtChangePassword(),
                                     BtnLogOut(),
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text('ngonngu1'.tr),
+                                        Obx(() => DropdownButton(
+                                              items: [
+                                                DropdownMenuItem(
+                                                  child: Text('vi'),
+                                                  value: 'vi',
+                                                ),
+                                                DropdownMenuItem(
+                                                  child: Text('en'),
+                                                  value: 'en',
+                                                )
+                                              ],
+                                              value:
+                                                  controller.selectedLang.value,
+                                              onChanged: (value) {
+                                                controller.selectedLang.value =
+                                                    value;
+                                                Get.updateLocale(Locale(
+                                                    controller
+                                                        .selectedLang.value));
+                                              },
+                                            )),
+                                      ],
+                                    ),
                                     Padding(
                                       padding: EdgeInsets.all(8.0),
                                       child: Text(
@@ -90,24 +114,24 @@ class ProfileView extends GetView<ProfileViewController> {
           ),
           BtnSetting(
             icon: Icons.contact_page,
-            text: 'Thông tin cá nhân',
+            text: 'thongtin'.tr,
             press: () => Get.toNamed(Routes.VIEWPROFILE),
           ),
           BtnNotication(),
           BtnSetting(
-            text: 'Chương trình đào tạo',
+            text: 'daotao'.tr,
             icon: Icons.school_outlined,
           ),
           BtnSetting(
-            text: 'Bảng điểm',
+            text: 'bangdiem'.tr,
             icon: Icons.control_point,
           ),
           BtnSetting(
-            text: 'Lịch thi',
+            text: 'lichthi'.tr,
             icon: Icons.calendar_today,
           ),
-          BtnSetting(text: 'Học phí', icon: Icons.point_of_sale),
-          BtnSetting(text: 'Danh sách lớp học phần', icon: Icons.list),
+          BtnSetting(text: 'hocphi'.tr, icon: Icons.point_of_sale),
+          BtnSetting(text: 'danhsachlop'.tr, icon: Icons.list),
         ],
       ),
     ));
@@ -137,7 +161,7 @@ class ProfileView extends GetView<ProfileViewController> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'My Profile',
+              'myprofile'.tr,
               style: TextStyle(
                   fontSize: 25.0,
                   fontWeight: FontWeight.w900,
